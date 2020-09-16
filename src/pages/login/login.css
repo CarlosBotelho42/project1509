@@ -1,0 +1,98 @@
+body {
+    width: 1440px;
+    height: 1024px;
+}
+
+#esquerda {
+    float: left;
+    margin-right: 0px;
+    padding: 0px;
+    width: 640px;
+    height: 1024px;
+
+}
+
+#direita {
+    float: right;
+    margin-left: 0px;
+    width: 800px;
+    height: 1024px;
+
+}
+
+#logo {
+    margin-top: 37px;
+    margin-left: 91px;
+    margin-bottom: 104px;
+
+}
+
+#esqueci {
+    font-family: Roboto;
+    color:#157763;
+}
+
+input {
+    font-family: Roboto;
+    padding-left: 15px;
+    width: 580px;
+    height: 40px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-width: 1px;
+    border-color: #C4C4C4;
+
+}
+
+#email {
+    margin-left: 52px;
+
+}
+
+#senha {
+    margin-left: 52px;
+    margin-top: 2px;
+
+}
+
+button {
+    font-weight: bold;
+    font-family: Roboto;
+    color: #FFFFFF;
+    background-color: #5BA092;
+    width: 602px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    
+}
+
+#entrar {
+    margin-top: 25px;
+    margin-left: 104px;
+}
+
+a, p{
+    font-family: Roboto;
+    color:#157763;
+
+}
+
+#esqueci {
+    margin-top: 25px;
+    margin-left: 600px;
+
+}
+
+#cadastro1 {
+    margin-left: 289px;
+
+}
+
+#cadastro2 {
+    text-decoration:none; 
+    font-family: Roboto;
+    color: #3F4A48;
+
+}
