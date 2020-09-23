@@ -3,7 +3,7 @@ body {
     height: 1024px;
 }
 
-#esquerda {
+.esquerda {
     float: left;
     margin-right: 0px;
     padding: 0px;
@@ -12,7 +12,7 @@ body {
 
 }
 
-#direita {
+.direita {
     float: right;
     margin-left: 0px;
     width: 800px;
@@ -20,14 +20,14 @@ body {
 
 }
 
-#logo {
+.logo {
     margin-top: 37px;
     margin-left: 91px;
     margin-bottom: 104px;
 
 }
 
-#esqueci {
+.esqueci {
     font-family: Roboto;
     color:#157763;
 }
@@ -45,12 +45,12 @@ input {
 
 }
 
-#email {
+.email {
     margin-left: 52px;
 
 }
 
-#senha {
+.senha {
     margin-left: 52px;
     margin-top: 2px;
 
@@ -68,7 +68,7 @@ button {
     
 }
 
-#entrar {
+.entrar {
     margin-top: 25px;
     margin-left: 104px;
 }
@@ -79,18 +79,18 @@ a, p{
 
 }
 
-#esqueci {
+.esqueci {
     margin-top: 25px;
     margin-left: 600px;
 
 }
 
-#cadastro1 {
+.cadastro1 {
     margin-left: 289px;
 
 }
 
-#cadastro2 {
+.cadastro2 {
     text-decoration:none; 
     font-family: Roboto;
     color: #3F4A48;
