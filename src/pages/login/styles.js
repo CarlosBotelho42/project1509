@@ -58,7 +58,7 @@ export const Password = styled.div`
   justify-content: flex-end;
   width: 30%;
 
-  margin-Bottom: 90px;
+  margin-bottom: 50px;
   a {
     color: #157763;
     border-bottom-width: 1px;
@@ -67,22 +67,18 @@ export const Password = styled.div`
   }
 `;
 
-export const Button = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px;
-  background-color: #5ba092;
-  padding: 20px;
-  width: 30%;
-  border-radius: 10px;
+export const Button = styled.button`
+  background: #5ba092;
+  color: white;
 
-  a {
-    color: white;
-    font-weight: bold;
-  }
-
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.8em 9em;
+  border: 2px solid #5ba092;
+  border-radius: 3px;
+  
   :active {
     background-color: #05a484;
-  }
+  };
+
 `;

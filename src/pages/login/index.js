@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import {
   Container,
@@ -26,9 +27,11 @@ function login() {
           <Password>
             <a>Esqueci a senha</a>
           </Password>
-          <Button>
-            <a>Entrar</a>
-          </Button>
+          <Link to="/Dashboard">
+            <Button>
+              Entrar
+            </Button>
+          </Link>
         </Section>
       </Row>
     </Container>
