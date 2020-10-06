@@ -1,5 +1,4 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
 
 import {
   Container,
@@ -10,32 +9,39 @@ import {
   Input,
   Password,
   Button,
-} from "./styles";
+  Registre,
+  StyledLink,
+} from './styles'
 
-import Fundo from "../../assets/Imagens/fundo.jpg";
-import Logo from "../../assets/Imagens/logo.jpg";
+import Fundo from '../../assets/Imagens/fundo.jpg'
+import Logo from '../../assets/Imagens/logo.jpg'
 
-function login() {
+function Login() {
   return (
     <Container>
       <Row>
         <ImgBackground src={Fundo} />
         <Section>
           <LogoContainer src={Logo} />
-          <Input placeholder={"Email"} />
-          <Input placeholder={"Senha"} />
+          <Input placeholder="Email" />
+          <Input placeholder="Senha" />
           <Password>
             <a>Esqueci a senha</a>
           </Password>
-          <Link to="/Dashboard">
-            <Button>
-              Entrar
-            </Button>
-          </Link>
+          <StyledLink to="/Dashboard">
+            <Button>Entrar</Button>
+          </StyledLink>
+
+          <StyledLink to="/Register">
+            Não tem conta?{' '}
+            <StyledLink to="/Register" style={{ color: '#5ba092' }}>
+              Cadastre-se aqui
+            </StyledLink>
+          </StyledLink>
         </Section>
       </Row>
     </Container>
-  );
+  )
 }
 
-export default login;
+export default Login

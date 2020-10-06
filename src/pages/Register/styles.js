@@ -74,12 +74,6 @@ export const Registre = styled.div`
   width: 20%;
 
   margin-bottom: 50px;
-  #color {
-    color: #157763;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-bottom-color: #157763;
-  }
 `
 
 export const Button = styled.button`

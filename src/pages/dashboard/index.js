@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-import { Button } from "./styles";
+import { Button } from './styles'
 
-function dashboard() {
+function Dashboard() {
   return (
     <div>
       <h1> EM CRIAÇÂO</h1>
@@ -15,7 +15,7 @@ function dashboard() {
         <Button>Ir Para Login</Button>
       </Link>
     </div>
-  );
+  )
 }
 
-export default dashboard;
+export default Dashboard

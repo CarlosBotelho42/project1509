@@ -1,18 +1,20 @@
-import React from 'react';
-import { Switch, Route} from "react-router-dom";
+import React from 'react'
+import { Switch, Route } from 'react-router-dom'
 
-import Landing from "../pages/landing";
-import Login from "../pages/login";
-import Dashboard from "../pages/dashboard";
+import Landing from '../pages/Landing'
+import Login from '../pages/Login'
+import Register from '../pages/Register'
+import Dashboard from '../pages/Dashboard'
 
 function Routes() {
-    return (
-        <Switch>
-            <Route exact path='/' component={Landing} />
-            <Route exact path='/Login' component={Login} />
-            <Route exact path='/Dashboard' component={Dashboard} />
-        </Switch>
-    )
+  return (
+    <Switch>
+      <Route exact path="/" component={Landing} />
+      <Route exact path="/Login" component={Login} />
+      <Route exact path="/Register" component={Register} />
+      <Route exact path="/Dashboard" component={Dashboard} />
+    </Switch>
+  )
 }
 
-export default Routes;
+export default Routes
