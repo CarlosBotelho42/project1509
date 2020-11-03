@@ -2,11 +2,10 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 export const Container = styled.div`
-  display: flex;
-  flex-direction: row;
-  background: linear-gradient(32.86deg, #5ca193 49.32%, #82b6ac 67.55%);
-  width: 100%;
-  height: 100vh;
+  h2 {
+    font-size: 1.4em;
+    color: #707070;
+  }
 `
 
 export const ContentLateralBar = styled.div`
@@ -42,7 +41,7 @@ export const Button = styled.div`
   justify-content: flex-start;
   align-items: center;
 
-  spam {
+  span {
     padding: 30px;
     width: 90%;
     color: #707070;
@@ -102,4 +101,27 @@ export const HeaderIcon = styled.div`
   border-color: #5ca193;
   border-radius: 50px;
   margin-right: 20px;
+`
+
+export const PersonContainer = styled.div`
+  background: #f0f0f0;
+  color: white;
+  width: 15%;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  span {
+    color: black;
+    padding: 0.5em;
+    &.nome {
+      color: #5ca193;
+      font-weight: bold;
+    }
+  }
 `

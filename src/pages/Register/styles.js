@@ -26,6 +26,10 @@ export const Section = styled.div`
   align-items: center;
   height: 100vh;
   width: 80vw;
+
+  .custom-classname.react-toggle--checked .react-toggle-track {
+    background-color: #ab199f;
+  }
 `
 
 export const LogoContainer = styled.img`

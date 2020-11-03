@@ -35,7 +35,7 @@ function Landing() {
           <a>Inicio</a>
           <a>Como funciona ?</a>
           <a>Sobre</a>
-          <a>Login</a>
+          <StyledLink to="/Login">Login</StyledLink>
         </ContainerHeaderList>
       </Row>
 
