@@ -48,7 +48,7 @@ function Landing() {
             oferecidos por profissionais autônomos.{' '}
           </TextTitle>
           <TextContent>
-            O site tem como objetivo ajudar na busca desses serviços para
+            Nossa aplicação tem como objetivo ajudar na busca desses serviços para
             clientes interessados, possuindo várias categorias em diversas
             áreas, assim, formamos a conexão entre os profissionais e clientes.
           </TextContent>

@@ -1,10 +1,10 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-import Landing from '../pages/Landing'
-import Login from '../pages/Login'
+import Landing from '../pages/landing'
+import Login from '../pages/login'
 import Register from '../pages/Register'
-import Dashboard from '../pages/Dashboard'
+import Dashboard from '../pages/dashboard'
 
 function Routes() {
   return (

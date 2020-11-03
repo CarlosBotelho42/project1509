@@ -30,12 +30,7 @@ function Dashboard() {
 
   return (
     <Container>
-      <ContentLateralBar>
-        <LogoContainer src={Logo} />
-        <StyledLink>Busca de Serviço</StyledLink>
-        <StyledLink>Historico</StyledLink>
-        <StyledLink>Mensagens</StyledLink>
-        <label
+      <ContentLateralBar>   <label
           style={{
             display: 'flex',
             flexDirection: 'row',
@@ -50,6 +45,18 @@ function Dashboard() {
           />
           <span style={{ color: 'white' }}>Freelancer</span>
         </label>
+        <LogoContainer src={Logo} style={{marginBottom: 50}}/>
+        <StyledLink>Busca de Serviço</StyledLink>
+        <StyledLink>Historico</StyledLink>
+        <StyledLink>Mensagens</StyledLink>
+        {
+          isFreelancer ? <>
+          <StyledLink>Meu Serviços</StyledLink>
+          <StyledLink>Minha Agenda</StyledLink>
+          
+          </> : null 
+        }
+     
       </ContentLateralBar>
       <Content>{isFreelancer ? <Freelancer /> : <Cliente />}</Content>
     </Container>

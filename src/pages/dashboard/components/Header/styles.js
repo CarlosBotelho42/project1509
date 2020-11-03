@@ -6,15 +6,14 @@ export const HeaderC = styled.div`
   justify-content: flex-end;
   align-items: center;
   width: 100%;
-  height: 80px;
+  height: 60px;
 `
 export const HeaderContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   margin-right: 20px;
-  height: 45px;
 
   h5 {
     color: #5ca193;
