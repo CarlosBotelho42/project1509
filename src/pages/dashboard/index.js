@@ -1,64 +1,87 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+
 import { Link } from 'react-router-dom'
 import Toggle from 'react-toggle'
 import 'react-toggle/style.css'
 
 import {
   Container,
-  ContentLateralBar,
-  LogoContainer,
   Content,
-  Button,
-  StyledLink,
   Header,
-  HeaderContainer,
-  HeaderIcon,
-  Row,
+  Title,
+  ContainerUser,
+  UserPhoto,
+  UserName,
+  Role,
+  Card,
 } from './styles'
 
-import Freelancer from './components/Freelancer'
-import Cliente from './components/Cliente'
+import LateralBar from './components/LateralBar'
+import CalendarBar from './components/CalendarBar'
 
-import Logo from '../../assets/Imagens/aaaaa.png'
+import Servicos from './pages/Servicos'
+import MeusServicos from './pages/MeusServicos'
 
 function Dashboard() {
   const [isFreelancer, setIsFreelancer] = useState(false)
+  const [title, setTitle] = useState('')
 
   const handleInputChangeFreelancer = () => {
     setIsFreelancer(!isFreelancer)
   }
 
+  const { page } = useSelector(state => state.dashboard)
+
+  useEffect(() => {
+    if (page !== null) {
+      switch (page) {
+        case 'meu_perfil': {
+          setTitle('Minha Area')
+          break
+        }
+        case 'busca_de_servico': {
+          setTitle('Buscar Serviços')
+          break
+        }
+        case 'historico': {
+          setTitle('Historico')
+          break
+        }
+        case 'mensagem': {
+          setTitle('Mensagem')
+          break
+        }
+        case 'meus_servicos': {
+          setTitle('Meus Serviços')
+          break
+        }
+        default:
+          break
+      }
+    }
+  }, [page])
+
   return (
     <Container>
-      <ContentLateralBar>   <label
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <Toggle
-            defaultChecked={isFreelancer}
-            onChange={handleInputChangeFreelancer}
-            icons={false}
-          />
-          <span style={{ color: 'white' }}>Freelancer</span>
-        </label>
-        <LogoContainer src={Logo} style={{marginBottom: 50}}/>
-        <StyledLink>Busca de Serviço</StyledLink>
-        <StyledLink>Historico</StyledLink>
-        <StyledLink>Mensagens</StyledLink>
-        {
-          isFreelancer ? <>
-          <StyledLink>Meu Serviços</StyledLink>
-          <StyledLink>Minha Agenda</StyledLink>
-          
-          </> : null 
-        }
-     
-      </ContentLateralBar>
-      <Content>{isFreelancer ? <Freelancer /> : <Cliente />}</Content>
+      <LateralBar />
+
+      <Content>
+        <Header>
+          <Title>{title}</Title>
+        </Header>
+
+        {page === 'meu_perfil' ? null : page === 'busca_de_servico' ? (
+          <Servicos />
+        ) : page === 'historico' ? null : page === 'mensagem' ? null : page ===
+          'meus_servicos' ? (
+          <MeusServicos />
+        ) : (
+          <h1>Page Not Found</h1>
+        )}
+      </Content>
+
+      <CalendarBar />
     </Container>
   )
 }

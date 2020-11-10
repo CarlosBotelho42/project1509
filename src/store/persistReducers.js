@@ -6,7 +6,7 @@ export default reducers => {
     {
       key: 'yoloy',
       storage,
-      whitelist: ['auth', 'user'],
+      whitelist: ['auth', 'user', 'dashboard'],
     },
     reducers
   )

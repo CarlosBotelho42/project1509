@@ -26,7 +26,7 @@ function Login() {
           <Input placeholder="Email" />
           <Input placeholder="Senha" />
           <Password>
-            <a>Esqueci a senha</a>
+            <span>Esqueci a senha</span>
           </Password>
           <StyledLink to="/Dashboard">
             <Button>Entrar</Button>

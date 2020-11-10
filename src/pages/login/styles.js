@@ -59,7 +59,7 @@ export const Password = styled.div`
   width: 30%;
 
   margin-bottom: 50px;
-  a {
+  span {
     color: #157763;
     border-bottom-width: 1px;
     border-bottom-style: solid;
