@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React, { useState } from 'react'
 import Toggle from 'react-toggle'
 import api from '../../apiservice'
@@ -20,12 +19,12 @@ import Fundo from '../../assets/Imagens/fundo.jpg'
 import Logo from '../../assets/Imagens/logo.jpg'
 
 function Register() {
-  const [nome, setNome] = useState("");
-  const [cpf, setCpf] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [valor, setValor] = useState("");
-  const [specialty, setSpecialty] = useState("");
+  const [name, setName] = useState('')
+  const [cpf, setCpf] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [role, setRole] = useState('')
+  const [specialty, setSpecialty] = useState('')
 
   const [checkBox, setCheckBox] = useState(false)
   const [isFreelancer, setIsFreelancer] = useState(false)
@@ -38,39 +37,34 @@ function Register() {
     setIsFreelancer(!isFreelancer)
   }
 
-  async function realizaCadastro(e) {
-
-
-    const data = ({
-        nome,
-        cpf,
-        email,
-        password,
-        valor,
-        specialty
-
-    })
-
+  async function realizaCadastro() {
     try {
+      const retorno = await fetch('http://localhost:8081/user/register', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        },
+        body: JSON.stringify({
+          Nome: name,
+          Cpf: cpf,
+          Email: email,
+          Senha: password,
+          Função: role,
+          Especialidade: specialty,
+        }),
+      })
 
-
-         await api.post('http://localhost:5000/cadastro', data, {
-            headers : {
-                'Acept' : 'application/json',
-                'Content-Type' : 'application/json',
-                'Access-Control-Allow-Origin' : '*'
-            }
-        })
-
-
-        alert('Cadastro realizada com sucesso.')
+      let json = await retorno.json()
+      console.log(json)
+      return retorno
+      //alert('Cadastro realizada com sucesso.')
+    } catch (error) {
+      console.error(error)
+      //alert('Erro no Cadastro do usuario.')
     }
-    catch (error) {
-        alert('Erro no Cadastro do usuario.')
-
-    }
-
-}
+  }
 
   return (
     <Container>
@@ -93,22 +87,45 @@ function Register() {
             />
           </label>
           <span style={{ color: '#a3a3a3' }}>Freelancer</span>
-          <form onSubmit={realizaCadastro(e)}
-          <Input placeholder="Nome Completo" type="text" value={nome}
-          onChange={(e) => setNome(e.target.value)}/>
-          <Input placeholder="Cpf" type="text" value={cpf}
-          onChange={(e) => setCpf(e.target.value)}/>
-          <Input placeholder="Email" type="email" value={email}
-          onChange={(e) => setEmail(e.target.value)}/>
-          <Input placeholder="Senha" type="password" value={password}
-          onChange={(e) => setPassword(e.target.value)}/>
+          <Input
+            placeholder="Nome"
+            type="text"
+            value={name}
+            onChange={e => setName(e.target.value)}
+          />
+          <Input
+            placeholder="Cpf"
+            type="text"
+            value={cpf}
+            onChange={e => setCpf(e.target.value)}
+          />
+          <Input
+            placeholder="Email"
+            type="email"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+          />
+          <Input
+            placeholder="Senha"
+            type="password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+          />
+          <Input
+            placeholder="Função"
+            type="text"
+            value={role}
+            onChange={e => setRole(e.target.value)}
+          />
 
           {isFreelancer ? (
             <>
-              <Input placeholder="Aréa de atuação" type="text" value={specialty}
-          onChange={(e) => setSpecialty(e.target.value)}/>
-              <Input placeholder="Valor Hora" type="number" value={valor}
-          onChange={(e) => setValor(e.target.value)}/>
+              <Input
+                placeholder="Especialidade"
+                type="text"
+                value={specialty}
+                onChange={e => setSpecialty(e.target.value)}
+              />
             </>
           ) : null}
           <label>
@@ -121,7 +138,9 @@ function Register() {
             Estou de acordo com os termos e condições propostos.
           </label>
           <StyledLink to="/Login">
-          <Button type="submit" onclick={realizaCadastro()}> Cadastrar</Button>
+            <Button type="submit" onclick={() => realizaCadastro()}>
+              Cadastrar
+            </Button>
           </StyledLink>
           <StyledLink to="/Login">
             Já tem conta?{' '}
@@ -131,7 +150,6 @@ function Register() {
           </StyledLink>
         </Section>
       </Row>
-      <form/>
     </Container>
   )
 }
